@@ -16,7 +16,7 @@ app.use(cors());
 app.use("/users", userRouter);
 app.use("/", Routes);
 
-const MONGODB_URL = "mongodb+srv://taskapp:@cluster0.yfdjoro.mongodb.net/task_db?retryWrites=true&w=majority";
+const MONGODB_URL = "mongodb+srv://taskapp:NGaOFS0pyGK46N68@cluster0.yfdjoro.mongodb.net/task_db?retryWrites=true&w=majority";
 
 const port = process.env.PORT || 5000;
 mongoose
