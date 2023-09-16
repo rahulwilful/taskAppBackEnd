@@ -4,6 +4,7 @@ import cors from "cors";
 import morgan from "morgan";
 import userRouter from "./routes/user.js";
 import Routes from "./routes/routes.js";
+import dotenv from ".env";
 
 const app = express();
 
@@ -15,9 +16,9 @@ app.use(cors());
 app.use("/users", userRouter);
 app.use("/", Routes);
 
-const MONGODB_URL = "mongodb+srv://taskapp:<your-password>@cluster0.yfdjoro.mongodb.net/task_db?retryWrites=true&w=majority";
+const MONGODB_URL = "mongodb+srv://taskapp:@cluster0.yfdjoro.mongodb.net/task_db?retryWrites=true&w=majority";
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 mongoose
   .connect(MONGODB_URL)
   .then(() => {
